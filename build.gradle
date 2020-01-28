@@ -76,7 +76,7 @@ gradle.taskGraph.afterTask { task, taskState ->
 
     if (taskState.failure) {
         String testRepDir = project.testReportDir
-        Desktop.desktop.browse(new File(testRepDir, 'index.html').toURI())
+        println("test failed: " + new File(testRepDir, 'index.html').toURI())
     } else {
         println "Koan is complete. Well done!"
     }
