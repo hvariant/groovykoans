@@ -12,8 +12,8 @@ package org.groovykoans.koan03
  * First and last name can be modified, but ssn is forever.
  */
 class GroovyPerson {
-    String firstName
-    String lastName
+    final String firstName
+    final String lastName
     final String ssn      // Marking the field 'final' makes it read-only after construction.
 
     GroovyPerson(String firstName, String lastName, String ssn) {
