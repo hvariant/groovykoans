@@ -11,7 +11,27 @@ import org.codehaus.groovy.runtime.InvokerHelper
 
 class Robot {
     // ------------ START EDITING HERE ----------------------
+    int x = 0
+    int y = 0
 
-
+    def invokeMethod(String name, Object args) {
+      def matcher = name =~ /(?i)(up|down|left|right)/
+      matcher.each { match, direction -> 
+        switch (direction.toLowerCase()) {
+          case 'left':
+            x--
+            break
+          case 'right':
+            x++
+            break
+          case 'up':
+            y++
+            break
+          case 'down':
+            y--
+            break
+        }
+      }
+    }
     // ------------ STOP EDITING HERE  ----------------------
 }
